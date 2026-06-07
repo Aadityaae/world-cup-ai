@@ -5,6 +5,13 @@
 
 A full-stack, end-to-end machine learning web application that predicts FIFA World Cup 2026 match outcomes, simulates group stage standings for all 12 groups, and runs a complete 48-team knockout bracket simulation — all powered by real historical World Cup data.
 
+
+
+
+https://github.com/user-attachments/assets/ac4cf819-6ef2-4e97-acdd-00873b757e50
+
+
+
 ---
 
 ## 📸 Features
