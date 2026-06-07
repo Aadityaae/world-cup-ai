@@ -32,15 +32,14 @@ const Navbar = () => {
       }`}
     >
       <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-        <Link to="/">
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="text-2xl font-black text-primary tracking-tighter"
-          >
-            Cup'26
-          </motion.div>
-        </Link>
+  <Link to="/">
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <img src="/logo.png" alt="Cup'26" className="h-10 w-auto" />
+    </motion.div>
+  </Link>
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-1">
