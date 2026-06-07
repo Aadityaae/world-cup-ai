@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import pandas as pd
@@ -20,7 +21,6 @@ kmeans = joblib.load(os.path.join(MODELS_DIR, 'kmeans_model.joblib'))
 scaler = joblib.load(os.path.join(MODELS_DIR, 'scaler.joblib'))
 cluster_features = joblib.load(os.path.join(MODELS_DIR, 'cluster_features.joblib'))
 
-import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = os.path.join(BASE_DIR, '..', 'data', 'processed')
 
