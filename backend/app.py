@@ -1,28 +1,28 @@
 import os
+import random
+import warnings
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 import pandas as pd
 import numpy as np
 import joblib
-import random
-import warnings
+
 warnings.filterwarnings('ignore')
 
 app = Flask(__name__)
 CORS(app)
 
-# Load all models and data
-print("Loading models...")
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, '..', 'data', 'processed')
 MODELS_DIR = os.path.join(BASE_DIR, 'models')
 
+# Load all models and data
+print("Loading models...")
 model = joblib.load(os.path.join(MODELS_DIR, 'match_predictor.joblib'))
 le = joblib.load(os.path.join(MODELS_DIR, 'label_encoder.joblib'))
 kmeans = joblib.load(os.path.join(MODELS_DIR, 'kmeans_model.joblib'))
 scaler = joblib.load(os.path.join(MODELS_DIR, 'scaler.joblib'))
 cluster_features = joblib.load(os.path.join(MODELS_DIR, 'cluster_features.joblib'))
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_DIR = os.path.join(BASE_DIR, '..', 'data', 'processed')
 
 profiles_df = pd.read_csv(os.path.join(DATA_DIR, 'team_profiles.csv'))
 matches_df = pd.read_csv(os.path.join(DATA_DIR, 'matches_clean.csv'))
