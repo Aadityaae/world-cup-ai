@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://127.0.0.1:5000'
+const BASE_URL = 'world-cup-ai-production.up.railway.app'
 
 export const getTeams = async () => {
   const res = await axios.get(`${BASE_URL}/teams`)
