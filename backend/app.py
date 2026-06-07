@@ -12,14 +12,20 @@ CORS(app)
 
 # Load all models and data
 print("Loading models...")
-model = joblib.load('models/match_predictor.joblib')
-le = joblib.load('models/label_encoder.joblib')
-kmeans = joblib.load('models/kmeans_model.joblib')
-scaler = joblib.load('models/scaler.joblib')
-cluster_features = joblib.load('models/cluster_features.joblib')
+MODELS_DIR = os.path.join(BASE_DIR, 'models')
 
-profiles_df = pd.read_csv('../data/processed/team_profiles.csv')
-matches_df = pd.read_csv('../data/processed/matches_clean.csv')
+model = joblib.load(os.path.join(MODELS_DIR, 'match_predictor.joblib'))
+le = joblib.load(os.path.join(MODELS_DIR, 'label_encoder.joblib'))
+kmeans = joblib.load(os.path.join(MODELS_DIR, 'kmeans_model.joblib'))
+scaler = joblib.load(os.path.join(MODELS_DIR, 'scaler.joblib'))
+cluster_features = joblib.load(os.path.join(MODELS_DIR, 'cluster_features.joblib'))
+
+import os
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+DATA_DIR = os.path.join(BASE_DIR, '..', 'data', 'processed')
+
+profiles_df = pd.read_csv(os.path.join(DATA_DIR, 'team_profiles.csv'))
+matches_df = pd.read_csv(os.path.join(DATA_DIR, 'matches_clean.csv'))
 print("✅ All models loaded!")
 
 # ─── Real 2026 World Cup Groups ───────────────────────────────────────────
