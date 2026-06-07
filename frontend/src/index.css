@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: #fef7ff;
+  color: #2e1a28;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* Candy shadows */
+.candy-shadow-pink { box-shadow: 0 8px 24px rgba(224, 64, 160, 0.2); }
+.candy-shadow-purple { box-shadow: 0 8px 24px rgba(124, 82, 170, 0.2); }
+.candy-shadow-blue { box-shadow: 0 8px 24px rgba(0, 150, 204, 0.2); }
+.candy-shadow-pink-lg { box-shadow: 0 16px 48px rgba(224, 64, 160, 0.3); }
+
+/* Bouncy hover — GPU accelerated */
+.bouncy-hover {
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+.bouncy-hover:hover { transform: scale(1.03); }
+.bouncy-hover:active { transform: scale(0.95); }
+
+/* Glass effect */
+.glass-bg {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Smooth page transitions */
+.page-enter {
+  animation: pageEnter 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Progress bar candy stripes */
+.candy-progress {
+  background: repeating-linear-gradient(
+    -45deg,
+    #e040a0,
+    #e040a0 10px,
+    #f0a0cc 10px,
+    #f0a0cc 20px
+  );
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #f8eef8; }
+::-webkit-scrollbar-thumb { background: #f0a0cc; border-radius: 999px; }
+::-webkit-scrollbar-thumb:hover { background: #e040a0; }
+
+/* Selection */
+::selection {
+  background: #ffd6ee;
+  color: #2e1a28;
+}
